@@ -2,6 +2,7 @@ import React from "react";
 import Unsplash from "../API/Unsplash";
 //it's a convention to keep our custom import statements last
 import SearchBar from "./SearchBar";
+import Images from "./imageList";
 
 //our main app component
 class App extends React.Component {
@@ -28,7 +29,7 @@ class App extends React.Component {
       <div className=" ui container ">
         {/* we pass the function as prob to the child component, so it will be called when the event triggers(onSubmit event) */}
         <SearchBar onFormSubmit={this.onFormSubmit} />
-        we found: {this.state.images.length} images.
+        <Images imageList={this.state.images} />
       </div>
     );
   }
